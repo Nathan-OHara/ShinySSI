@@ -24,6 +24,7 @@ ui <- fluidPage(
       width = 5
     ),
     mainPanel(
+      h2("Infection Risk"),
       verbatimTextOutput("InfectionRisk"),
       width = 7
     )
