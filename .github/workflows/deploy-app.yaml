@@ -15,7 +15,7 @@ on:
   pull_request:
 
 jobs:
-  deploy-app:
+  shinylive:
     uses: posit-dev/r-shinylive/.github/workflows/deploy-app.yaml@barret
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
