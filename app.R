@@ -5,7 +5,7 @@ library(shiny)
 library(survival)
 library(dplyr)
 
-open_desc_data <- read.csv("open-desc-data-2024-05-18.csv")
+open_desc_data <- read.csv("open-desc-data-2024-05-20.csv")
 
 ui <- fluidPage(
   titlePanel("Open Fracture Complication Risk"),
