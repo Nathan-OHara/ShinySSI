@@ -15,7 +15,7 @@ ui <- fluidPage(
         column(
           6,
           selectInput("OTA1", "OTA-AO Bone", choices = c("All", "1 (Humerus/Clavicle/Scapula)" = "1", "2R (Radius)" = "2R", "2U (Ulna)" = "2U", 
-                                                         "3 (Femur)" = "3", "4 (Tibia/Fibula/Malleolar)" = "4", "6 (Pelvis/Acetabulum)" = "6", 
+                                                         "3 (Femur/Patella)" = "3", "4 (Tibia/Fibula/Malleolar)" = "4", "6 (Pelvis/Acetabulum)" = "6", 
                                                          "7 (Hand)" = "7", "8 (Foot)" = "8")),
           selectInput("OTA2", "OTA-AO Segment", choices = c("All", "1" = "1", "2" = "2", "3" = "3", "4" = "4","5" = "5",
                                                             "6" = "6","7" = "7","8" = "8","9" = "9","F"="F")),
