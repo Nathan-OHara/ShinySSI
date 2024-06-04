@@ -5,7 +5,7 @@ library(shiny)
 library(survival)
 library(dplyr)
 
-open_desc_data <- read.csv("open-desc-data-2024-05-20.csv")
+open_desc_data <- read.csv("open-desc-data-2024-06-04.csv")
 
 ui <- fluidPage(
   titlePanel("Open Fracture Complication Risk"),
@@ -14,8 +14,11 @@ ui <- fluidPage(
       fluidRow(
         column(
           6,
-          selectInput("OTA1", "OTA-AO Bone", choices = c("All", "1" = "1", "2R" = "2R", "2U" = "2U", "3" = "3", "4" = "4", "6" = "6", "7" = "7", "8" = "8")),
-          selectInput("OTA2", "OTA-AO Segment", choices = c("All", "1" = "1", "2" = "2", "3" = "3", "4" = "4")),
+          selectInput("OTA1", "OTA-AO Bone", choices = c("All", "1 (Humerus/Clavicle/Scapula)" = "1", "2R (Radius)" = "2R", "2U (Ulna)" = "2U", 
+                                                         "3 (Femur)" = "3", "4 (Tibia/Fibula/Malleolar)" = "4", "6 (Pelvis/Acetabulum)" = "6", 
+                                                         "7 (Hand)" = "7", "8 (Foot)" = "8")),
+          selectInput("OTA2", "OTA-AO Segment", choices = c("All", "1" = "1", "2" = "2", "3" = "3", "4" = "4","5" = "5",
+                                                            "6" = "6","7" = "7","8" = "8","9" = "9","F"="F")),
           selectInput("OTAlast", "OTA-AO Morphology", choices = c("All", "A" = "A", "B" = "B", "C" = "C")),
           selectInput("Gust", "Gustilo-Anderson Classification", choices = c("All", "1" = "1", "2" = "2", "3A" = "3", "3B" = "4", "3C" = "5"))
         )
@@ -31,6 +34,8 @@ ui <- fluidPage(
       verbatimTextOutput("DeepOrganInfectionRisk"),
       h2("Delayed Union or Nonunion Rate"),
       verbatimTextOutput("NonunionRisk"),
+      h2("References"),
+      htmlOutput("References"),
       width = 6
     )
   )
@@ -120,6 +125,17 @@ server <- function(input, output) {
     paste0(txts4, collapse = "\n")
   })
   
+  output$References <- renderUI({
+    HTML(
+      paste0(
+        "<ul>",
+        "<li>Gustilo RB, Anderson JT. Prevention of infection in the treatment of one thousand and twenty-five open fractures of long bones: retrospective and prospective analyses. J Bone Joint Surg Am. 1976 Jun;58(4):453-8.</li>",
+        "<li>Meinberg EG, Agel J, Roberts CS, Karam MD, Kellam JF. Fracture and Dislocation Classification Compendium-2018. J Orthop Trauma. 2018 Jan;32 Suppl 1:S1-S170.</li>",
+        "<li>FLOW Investigators; Bhandari M, Jeray KJ, Petrisor BA, et al. A Trial of Wound Irrigation in the Initial Management of Open Fracture Wounds. N Engl J Med. 2015 Dec 31;373(27):2629-41.</li>",
+        "<li>PREP-IT Investigators; Sprague S, Slobogean G, Wells JL, et al. Skin Antisepsis before Surgical Fixation of Extremity Fractures. N Engl J Med. 2024 Feb 1;390(5):409-420.</li>",
+        "<li>PREP-IT Investigators. Aqueous skin antisepsis before surgical fixation of open fractures (Aqueous-PREP): a multiple-period, cluster-randomised, crossover trial. Lancet. 2022 Oct 15;400(10360):1334-1344.</li>",
+        "</ul>")
+    )})
 }
-
 shinyApp(ui = ui, server = server)
+
