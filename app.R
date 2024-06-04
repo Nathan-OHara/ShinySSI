@@ -34,7 +34,7 @@ ui <- fluidPage(
       verbatimTextOutput("DeepOrganInfectionRisk"),
       h2("Delayed Union or Nonunion Rate"),
       verbatimTextOutput("NonunionRisk"),
-      h2("References"),
+      h5("References"),
       htmlOutput("References"),
       width = 6
     )
@@ -128,6 +128,7 @@ server <- function(input, output) {
   output$References <- renderUI({
     HTML(
       paste0(
+        "<small",
         "<ul>",
         "<li>Gustilo RB, Anderson JT. Prevention of infection in the treatment of one thousand and twenty-five open fractures of long bones: retrospective and prospective analyses. J Bone Joint Surg Am. 1976 Jun;58(4):453-8.</li>",
         "<li>Meinberg EG, Agel J, Roberts CS, Karam MD, Kellam JF. Fracture and Dislocation Classification Compendium-2018. J Orthop Trauma. 2018 Jan;32 Suppl 1:S1-S170.</li>",
