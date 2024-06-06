@@ -131,6 +131,7 @@ server <- function(input, output) {
         "<small",
         "<ul>",
         "<li>Gustilo RB, Anderson JT. Prevention of infection in the treatment of one thousand and twenty-five open fractures of long bones: retrospective and prospective analyses. J Bone Joint Surg Am. 1976 Jun;58(4):453-8.</li>",
+        "<li>Gustilo RB, Mendoza RM, Williams DN. Problems in the management of type III (severe) open fractures: a new classification of type III open fractures. J Trauma. 1984 Aug;24(8):742-6.</li>",
         "<li>Meinberg EG, Agel J, Roberts CS, Karam MD, Kellam JF. Fracture and Dislocation Classification Compendium-2018. J Orthop Trauma. 2018 Jan;32 Suppl 1:S1-S170.</li>",
         "<li>FLOW Investigators; Bhandari M, Jeray KJ, Petrisor BA, et al. A Trial of Wound Irrigation in the Initial Management of Open Fracture Wounds. N Engl J Med. 2015 Dec 31;373(27):2629-41.</li>",
         "<li>PREP-IT Investigators; Sprague S, Slobogean G, Wells JL, et al. Skin Antisepsis before Surgical Fixation of Extremity Fractures. N Engl J Med. 2024 Feb 1;390(5):409-420.</li>",
