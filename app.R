@@ -16,7 +16,8 @@ ui <- fluidPage(
           6,
           selectInput("OTA1", "OTA-AO Bone", choices = c("All", "1 (Humerus/Clavicle/Scapula)" = "1", "2R (Radius)" = "2R", "2U (Ulna)" = "2U", 
                                                          "3 (Femur/Patella)" = "3", "4 (Tibia/Malleolar)" = "4","4F (Fibula)" = "4F",
-                                                         "6 (Pelvis/Acetabulum)" = "6", "7 (Hand)" = "7", "8 (Foot)" = "8")),
+                                                         "6 (Pelvis/Acetabulum)" = "6", 
+                                                         "7 (Hand)" = "7", "8 (Foot)" = "8")),
           selectInput("OTA2", "OTA-AO Segment", choices = c("All", "1" = "1", "2" = "2", "3" = "3", "4" = "4","5" = "5",
                                                             "6" = "6","7" = "7","8" = "8","9" = "9","F"="F")),
           selectInput("OTAlast", "OTA-AO Morphology", choices = c("All", "A" = "A", "B" = "B", "C" = "C")),
@@ -128,7 +129,7 @@ server <- function(input, output) {
   output$References <- renderUI({
     HTML(
       paste0(
-        "<small",
+        "<small>",
         "<ul>",
         "<li>Gustilo RB, Anderson JT. Prevention of infection in the treatment of one thousand and twenty-five open fractures of long bones: retrospective and prospective analyses. J Bone Joint Surg Am. 1976 Jun;58(4):453-8.</li>",
         "<li>Gustilo RB, Mendoza RM, Williams DN. Problems in the management of type III (severe) open fractures: a new classification of type III open fractures. J Trauma. 1984 Aug;24(8):742-6.</li>",
